@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>42 Generations</title>
+    <link rel="stylesheet" href="//cdn.datatables.net/1.13.1/css/jquery.dataTables.min.css">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.3.min.js"></script>
+    <script type="text/javascript" src="//cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
+
+    
+    <script type="text/javascript">
+        // to populate mytable
+        $(document).ready(function () {
+            $('#mytable').DataTable({
+                    ajax: {
+                    url: 'kjvdatawithidkey1.json',
+                    dataSrc: '',
+                },
+                columns: [
+                    { data: 'id'},
+                    { data: 'book' },
+                    { data: 'verse' },
+                ],
+                lengthMenu: [
+                    [5, 15, 25, -1],
+                    [5, 15, 25, 'All'],
+                ],
+            });
+        });
+
+        // to populate mytable2
+        $(document).ready(function () {
+            $('#mytable2').DataTable({
+                ajax: {
+                    url: 'kjvfeeling3.json',
+                    dataSrc: '',
+                },
+                columns: [
+                    { data: 'id'},
+                    { data: 'feeling' },
+                    { data: 'bible_verse' },
+                    { data: 'bible_message'},
+                ],
+                lengthMenu: [
+                [2, 12, 22, -1],
+                [2, 12, 22, 'All'],
+                ],
+                rowGroup: {
+                    dataSrc: 'group'
+                }
+            });
+        });
+
+
+
+        // to populate mytable3
+        $(document).ready(function () {
+            $('#mytable3').DataTable({
+                ajax: {
+                    url: 'questionskjv1.json',
+                    dataSrc: '',
+                },
+                columns: [
+                    { data: 'id'},
+                    { data: 'Question' },
+                    { data: 'Answer' },
+                ],
+                lengthMenu: [
+                [2, 12, 22, -1],
+                [2, 12, 22, 'All'],
+                ],
+                
+            });
+        });
+
+
+    </script>
+</head>
+<body>
+    <!--  table added-->
+    <table id="mytable" class="cell-border compact stripe hover" style="width:100%">
+        <caption style="background-color:#3630a3; 
+        color:white; 
+        padding:2px;">KJV Bible</caption>
+        <caption style="background-color:#3630a3; 
+        color:white; 
+        padding:2px;">42gens.com</caption>
+
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>Book</th>
+                <th>Verse</th>
+            </tr>
+        </thead>
+        <tfoot>
+            <tr>
+                <th>id</th>
+                <th>Book</th>
+                <th>Verse</th>
+            </tr>
+        </tfoot>
+    </table>
+    
+    <!--  2nd table added-->
+    <table id="mytable2" class="cell-border compact stripe hover" style="width:100%">
+        <caption style="background-color:#085716; 
+        color:white; 
+        padding:2px;">Negative Feeling?  Here is some Good News!</caption>
+        <caption style="background-color:#085716; 
+        color:white; 
+        padding:1px;">Keep coming back to read the good word!</caption>
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>feeling</th>
+                <th>bible_verse</th>
+                <th>bible_message</th>
+            </tr>
+        </thead>
+        <tfoot>
+            <tr>
+                <th>id</th>
+                <th>feeling</th>
+                <th>bible_verse</th>
+                <th>bible_message</th>
+            </tr>
+        </tfoot>
+    </table>
+
+    <!--  3rd table added-->
+    <table id="mytable3" class="cell-border compact stripe hover" style="width:100%">
+        <caption style="background-color:#8cd771; 
+        color:rgb(10, 10, 10);
+        font-weight: bold;
+        padding:4px;">KJV Common Questions and Answers coupled with Facts</caption>
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>Question</th>
+                <th>Answer</th>
+            </tr>
+        </thead>
+        <tfoot>
+            <tr>
+                <th>id</th>
+                <th>Question</th>
+                <th>Answer</th>
+            </tr>
+        </tfoot>
+    </table>
+</body>
+</html>
